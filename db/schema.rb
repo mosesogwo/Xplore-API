@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_10_130313) do
+ActiveRecord::Schema.define(version: 2020_02_10_133258) do
+
+  create_table "packages", force: :cascade do |t|
+    t.string "destination"
+    t.decimal "price"
+    t.text "details"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "full_name"
