@@ -22,7 +22,7 @@ require 'database_cleaner/active_record'
 # The following line is provided for convenience purposes. It has the downside
 # of increasing the boot-up time by auto-requiring all files in the support
 # directory. Alternatively, in the individual `*_spec.rb` files, manually
-# require only the support files necessary.
+# require only the support files necessary.An error occurred while loading ./spec/models/user_spec.rb.
 #
 # Dir[Rails.root.join('spec', 'support', '**', '*.rb')].each { |f| require f }
 
