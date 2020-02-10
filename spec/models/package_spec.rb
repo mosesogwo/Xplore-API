@@ -11,6 +11,11 @@ RSpec.describe Package, type: :model do
   describe 'Associations' do
     it { should have_many(:wishes) }
     it { should have_many(:users).through(:wishes) }
-    it { should have_many_attached(:images) }
+  end
+
+  describe 'Attachments' do
+    subject {build :package}
+
+    it { expect(subject.images).to be_attached }
   end
 end
