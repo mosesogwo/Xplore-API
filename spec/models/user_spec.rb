@@ -8,7 +8,7 @@ RSpec.describe User, type: :model do
   end
 
   describe 'Associations' do
-    it { should have_many(:favourites) }
-    it { should have_many(:packages).through(:favourites) }
+    it { should have_many(:wishes) }
+    it { should have_many(:packages).through(:wishes) }
   end
 end
