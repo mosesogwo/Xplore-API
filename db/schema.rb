@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_10_133258) do
+ActiveRecord::Schema.define(version: 2020_02_10_133501) do
 
   create_table "packages", force: :cascade do |t|
     t.string "destination"
@@ -25,6 +25,15 @@ ActiveRecord::Schema.define(version: 2020_02_10_133258) do
     t.string "username"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "wishes", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "package_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["package_id"], name: "index_wishes_on_package_id"
+    t.index ["user_id"], name: "index_wishes_on_user_id"
   end
 
 end
