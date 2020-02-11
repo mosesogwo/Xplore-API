@@ -3,6 +3,6 @@ module Api
 
     class WishesController < ApplicationController
 
-
+    end
   end
 end
