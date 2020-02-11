@@ -14,12 +14,11 @@ RSpec.describe 'Packages', type: :request do
     context 'when a user is present' do
       let!(:test_user) {create(:user)}
       let!(:packages) { create_list(:package, 3)}
-      let(:valid_attributes) {{username: test_user.username}}
       before{
         Wish.create(user_id: test_user.id, package_id: packages[0].id)
         Wish.create(user_id: test_user.id, package_id: packages[1].id)
         valid_attributes = {}
-        get '/api/v1/wishes', params: valid_attributes
+        get '/api/v1/wishes', params: {username: test_user.username}
       }
 
       it 'returns users wishlist' do
