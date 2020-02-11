@@ -4,9 +4,10 @@ RSpec.describe 'Packages', type: :request do
 
   describe 'GET /packages' do
     before {get '/api/v1/packages' }
+    
     it 'returns all packages with key data in json object' do
-      data = JSON.parse(response.body)
-      expect(data.size).to eq(3)
+      result = JSON.parse(response.body)
+      expect(result["data"].length).to eq(10)
     end
 
     it 'returns http status 200' do
