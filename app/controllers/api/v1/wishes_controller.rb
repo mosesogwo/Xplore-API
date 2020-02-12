@@ -5,7 +5,7 @@ module Api
 
       def index
         wishes = @current_user.packages
-        render json: {status: 'SUCCESS', message: 'Loaded Packages', data: wishes}, status: :ok
+        render json: {status: 'SUCCESS', message: 'Loaded Wish List', data: wishes}, status: :ok
       end
 
       private
