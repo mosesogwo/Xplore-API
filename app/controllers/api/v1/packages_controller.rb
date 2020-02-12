@@ -4,7 +4,8 @@ module Api
 
       def index
         packages = Package.all
-        render json: {status: 'SUCCESS', message: 'Loaded Packages', data: packages}, status: :ok
+        data = packages.map{|package| package.as_json.merge({images: package.images.map { |image| ({image: url_for(image)})}})}
+        render json: {status: 'SUCCESS', message: 'Loaded Packages', data: data}, status: :ok
       end
 
     end

@@ -5,7 +5,8 @@ module Api
 
       def index
         wishes = @current_user.packages
-        render json: {status: 'SUCCESS', message: 'Loaded Wish List', data: wishes}, status: :ok
+        data = wishes.map{|wish| wish.as_json.merge({images: wish.images.map { |image| ({image: url_for(image)})}})}
+        render json: {status: 'SUCCESS', message: 'Loaded Wish List', data: data}, status: :ok
       end
 
       def create
@@ -19,7 +20,6 @@ module Api
 
       def destroy
         wish = @current_user.wishes.find_by(package_id: params[:id])
-        byebug
         if wish
           wish.destroy
           render json: {status: 'SUCCESS', message:'Package removed from Wishes', data: wish}, status: :ok
