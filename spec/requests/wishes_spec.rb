@@ -52,7 +52,7 @@ RSpec.describe 'Packages', type: :request do
       let!(:test_user) {create(:user)}
       let!(:packages) {create_list(:package, 3)}
       before{
-        post '/api/v1/wishes', params: {username: test_user.username, id: packages[0].id}
+        post "/api/v1/wishes", params: {username: test_user.username, id: packages[0].id}
       }
 
       it "adds package to the user's wish list" do

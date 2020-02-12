@@ -8,6 +8,15 @@ module Api
         render json: {status: 'SUCCESS', message: 'Loaded Wish List', data: wishes}, status: :ok
       end
 
+      def create
+        wish = @current_user.wishes.build(package_id: params[:id])
+        if wish.save
+          render json: {status: 'SUCCESS', message: 'Added to Wishes', data: wish}, status: :ok
+        else
+          render json: {status: 'ERROR', message: 'Could not be added to Wishes', data: wish.errors}, status: :unprocessable_entity
+        end
+      end
+
       private
 
       def set_current_user
