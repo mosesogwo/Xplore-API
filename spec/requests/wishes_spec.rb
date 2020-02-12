@@ -63,7 +63,27 @@ RSpec.describe 'Packages', type: :request do
       it 'returns http status 200' do
         expect(response).to have_http_status(200)
       end
+    end
+  end
 
+  describe 'DELETE /wishes' do
+    let!(:test_user) {create(:user)}
+    let!(:packages) { create_list(:package, 3)}
+    before{
+      Wish.create(user_id: test_user.id, package_id: packages[0].id)
+      Wish.create(user_id: test_user.id, package_id: packages[1].id)
+      delete '/api/v1/wishes', params: {username: test_user.username, id: 1}
+    }
+
+    it 'returns a success message' do
+      result = JSON.parse(response.body)
+      expect(result.message).to match(/Package removed from Wishes/)
+    end
+
+    it 'removes the wish from Wish List' do
+      get '/api/v1/wishes', params: {username: test_user.username}
+      result = JSON.parse(response.body)
+      expect(result["data"].length).to eq(1)
     end
   end
 end
