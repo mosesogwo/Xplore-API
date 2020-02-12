@@ -14,7 +14,9 @@ module Api
         if wish.save
           render json: { status: 'SUCCESS', message: 'Added to Wishes', data: wish }, status: :ok
         else
-          render json: { status: 'ERROR', message: 'Could not be added to Wishes', data: wish.errors }, status: :unprocessable_entity
+          render json: { status: 'ERROR',
+                         message: 'Could not be added to Wishes',
+                         data: wish.errors }, status: :unprocessable_entity
         end
       end
 
@@ -32,12 +34,13 @@ module Api
 
       def attach_images(package)
         image_urls = package.images.map { |image| { image: url_for(image) } }
-        package.as_json.merge({ images: image_urls })
+        package.as_json.merge(images: image_urls)
       end
 
       def set_current_user
-        if wish_params[:username] != nil
-          @current_user = User.find_by(username: wish_params[:username]) || User.create(username: wish_params[:username])
+        if !wish_params[:username].nil?
+          @current_user = User.find_by(username: wish_params[:username]) ||
+                          User.create(username: wish_params[:username])
         else
           render json: { status: 'ERROR', message: 'No logged in user', data: [] }, status: :internal_server_error
         end

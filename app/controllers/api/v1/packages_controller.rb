@@ -11,7 +11,7 @@ module Api
 
       def attach_images(package)
         image_urls = package.images.map { |image| { image: url_for(image) } }
-        package.as_json.merge({ images: image_urls })
+        package.as_json.merge(images: image_urls)
       end
     end
   end
