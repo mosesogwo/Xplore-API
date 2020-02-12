@@ -72,12 +72,12 @@ RSpec.describe 'Packages', type: :request do
     before{
       Wish.create(user_id: test_user.id, package_id: packages[0].id)
       Wish.create(user_id: test_user.id, package_id: packages[1].id)
-      delete '/api/v1/wishes', params: {username: test_user.username, id: 1}
+      delete "/api/v1/wishes/#{1}", params: {username: test_user.username}
     }
 
     it 'returns a success message' do
       result = JSON.parse(response.body)
-      expect(result.message).to match(/Package removed from Wishes/)
+      expect(result["message"]).to match(/Package removed from Wishes/)
     end
 
     it 'removes the wish from Wish List' do

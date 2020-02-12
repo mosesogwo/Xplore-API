@@ -17,6 +17,18 @@ module Api
         end
       end
 
+      def destroy
+        wish = @current_user.wishes.find_by(package_id: params[:id])
+        byebug
+        if wish
+          wish.destroy
+          render json: {status: 'SUCCESS', message:'Package removed from Wishes', data: wish}, status: :ok
+        else
+          render json: {status: 'ERROR', message:'Package not on Wish List', data: []}, status: :not_found
+        end
+
+      end
+
       private
 
       def set_current_user
@@ -28,7 +40,7 @@ module Api
       end 
 
       def wish_params
-        params.permit(:username)
+        params.permit(:username, :id)
       end
     end
   end
