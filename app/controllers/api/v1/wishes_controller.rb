@@ -5,7 +5,7 @@ module Api
 
       def index
         wishes = @current_user.packages
-        data = wishes.map { |wish| wish.as_json.merge({ images: wish.images.map { |image| ({ image: url_for(image) }) } }) }
+        data = wishes.map { |wish| attach_images(wish) }
         render json: { status: 'SUCCESS', message: 'Loaded Wish List', data: data }, status: :ok
       end
 
@@ -29,6 +29,10 @@ module Api
       end
 
       private
+
+      def attach_images(package)
+        package.as_json.merge({ images: package.images.map { |image| { image: url_for(image) }}})
+      end
 
       def set_current_user
         if wish_params[:username] != nil
