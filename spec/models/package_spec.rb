@@ -16,6 +16,6 @@ RSpec.describe Package, type: :model do
   describe 'Attachments' do
     subject { build :package }
 
-    it { expect(subject.images).to be_attached }
+    it { expect(subject.image).to be_attached }
   end
 end

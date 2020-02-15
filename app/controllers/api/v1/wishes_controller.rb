@@ -33,8 +33,7 @@ module Api
       private
 
       def attach_images(package)
-        image_urls = package.images.map { |image| { image: url_for(image) } }
-        package.as_json.merge(images: image_urls)
+        package.as_json.merge(images: url_for(package.image))
       end
 
       def set_current_user
