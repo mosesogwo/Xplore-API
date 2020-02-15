@@ -33,7 +33,7 @@ module Api
       private
 
       def attach_images(package)
-        package.as_json.merge(images: url_for(package.image))
+        package.as_json.merge(image: url_for(package.image))
       end
 
       def set_current_user
