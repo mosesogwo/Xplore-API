@@ -15,11 +15,39 @@ local:
 #   bucket: your_own_bucket
 
 # Remember not to checkin your GCS keyfile to a repository
-# google:
-#   service: GCS
-#   project: your_project
-#   credentials: <%= Rails.root.join("path/to/gcs.keyfile") %>
-#   bucket: your_own_bucket
+google:
+  service: GCS
+  project: xplore
+  credentials: {
+  type: "service_account",
+  project_id: "xplore-268610",
+  private_key_id: "837686360dd94eabef3e56a36fe79008112291c2",
+  private_key: "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDsF76bxmEGKNEr\n0B2djAnoz2upbxqRoVO/8UPPi5gaibVPAOEYNG7tyC2Ojn4mgVOwjmMf6YVDV5Ne\nPV5Nl9hiU9ruZ49YOlQxJ/+k8V9kAuLgPoUWxNDGMDZOmjiWxxkbdLDCXobtV6R2\nDg33FitGsMRIgmtgWz8WIPtIk65ODOME3GuZWEuOtSf2Tzi9G7DBAoxPqZgSGYnB\nKQuYPhXk8bfB5troqLRMuYo7BDUx3Q6mpqP+XoiWpKp8lOGtV1EOSb/mhCj3wt33\n7IEMAD65uO6EIxTvPeHqdzgK+erHBbAzz4QhVAKfhnRKyMl6WTIT3lgcD/ovsS7j\nI+sRlvkFAgMBAAECggEACkRWE6wi2AO6ZO9d+lX2sFsk0W91dlPPso8pZcMqUC0g\n51igcU8Ga+zCnmpv7fi9zPXENcUP+Ie8buK4USODU3NWF/wE7c9Ljf+xTFj6zvyZ\nJStS2lSgx52dHvnx8AykeN8wOKOntnaTPlcKIG6kXyScxJJ3XO9a5Pl2NAfIErjD\nXLBHQoEjSqdB92ljBYtygDopVu24e6VjtszAAXP5wk+Dqa0tV/64UdjQPkRTeZ3x\nETBo8ZrlTVAKTtCOmUprpsk2E7x0d0Y/ECCMLmW4KrZZtuC50OI6Y10QO+DO+68A\nnTVFubF/VLoOcQl0GsHwUIOARpciVcPwnZlhdJivmQKBgQD2cp/KP+p38SDi83wc\n4IuGQlnXir4XZ52Jy79i/CAtAfZDInp5dhFP7ergFRp8qQN04Kp9YFkIETFHruPP\nszc19h9Dy6dgrCCzIry3Aq1IFkO/VvteoS6zdhL9FwAZEQjQpYd4R/nNMOvwUkbh\nkeNbN5LvibytolIR0LWOXsRQvwKBgQD1Pl98oW6+QYyrK9e9pEp1Qg7JJrvEz1Lq\n7DV879XC9Hk2W3DHvgnM4A2IouXKryrrl4C4T7V6CQNRqPcvogF7GSqWP6SIuVXJ\nP+7ofezfPs7KdmmUvt//yFZA+f2Dsu9fcnIuE0TrCYQiUrNi8uBGYcpZeQxBJ05f\nOWpQqgHjOwKBgAqeldQZPPk+IrSk2UxFQL3gTg7Do71OcbNmXDDfvGM0GnB6I9zo\nAYb4MY7GWgXVIpj+tVoBtNRsKTt1hcuFZXOlz2MUe3nm8OHHNWqNavoYO4MbNGm3\neFOzWs4dF5v85+xVtaixMUpuOTx5zyQZLTrZAjPgM4kn3XF3FNu1qa/xAoGBAMml\nFWImYiYxQ3ZiwCr/8PDk9b9TB8TVKzpaKcimcr6vwRJ+sQarLOe1uasFNagny0SW\n95GUiITk8EOuiEA0Fr+ee7O6dJCuwuiMluW21JLi06kJH9rb7tYjZThb1KT69XMn\naNaVpW8UDf8ivLi5NsroETbsHrVbmkcVsGLOxmqNAoGBANGHLqFQFxRPN/19RxCl\n84AhB5DJoqJkAgujL9OPsHvCxnKEl2Y/wFx7eLr1kP98iqy6cECaMGakxwWN/1ei\n0+Xg7I8blkYQfMzhNNY+nCEMU14UY3kJFiMHRtTh4h5zkaLyrjy0iHaX3j1mvxx4\nwHm2WtU6cN1HguL1ydy7cBM1\n-----END PRIVATE KEY-----\n",
+  client_email: "xplore@xplore-268610.iam.gserviceaccount.com",
+  client_id: "114741794980474942553",
+  auth_uri: "https://accounts.google.com/o/oauth2/auth",
+  token_uri: "https://oauth2.googleapis.com/token",
+  auth_provider_x509_cert_url: "https://www.googleapis.com/oauth2/v1/certs",
+  client_x509_cert_url: "https://www.googleapis.com/robot/v1/metadata/x509/xplore%40xplore-268610.iam.gserviceaccount.com"
+  }
+  bucket: xplore-bucket
+  
+google_dev:
+  service: GCS
+  project: xplore
+  credentials: {
+  type: "service_account",
+  project_id: "xplore-268610",
+  private_key_id: "837686360dd94eabef3e56a36fe79008112291c2",
+  private_key: "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDsF76bxmEGKNEr\n0B2djAnoz2upbxqRoVO/8UPPi5gaibVPAOEYNG7tyC2Ojn4mgVOwjmMf6YVDV5Ne\nPV5Nl9hiU9ruZ49YOlQxJ/+k8V9kAuLgPoUWxNDGMDZOmjiWxxkbdLDCXobtV6R2\nDg33FitGsMRIgmtgWz8WIPtIk65ODOME3GuZWEuOtSf2Tzi9G7DBAoxPqZgSGYnB\nKQuYPhXk8bfB5troqLRMuYo7BDUx3Q6mpqP+XoiWpKp8lOGtV1EOSb/mhCj3wt33\n7IEMAD65uO6EIxTvPeHqdzgK+erHBbAzz4QhVAKfhnRKyMl6WTIT3lgcD/ovsS7j\nI+sRlvkFAgMBAAECggEACkRWE6wi2AO6ZO9d+lX2sFsk0W91dlPPso8pZcMqUC0g\n51igcU8Ga+zCnmpv7fi9zPXENcUP+Ie8buK4USODU3NWF/wE7c9Ljf+xTFj6zvyZ\nJStS2lSgx52dHvnx8AykeN8wOKOntnaTPlcKIG6kXyScxJJ3XO9a5Pl2NAfIErjD\nXLBHQoEjSqdB92ljBYtygDopVu24e6VjtszAAXP5wk+Dqa0tV/64UdjQPkRTeZ3x\nETBo8ZrlTVAKTtCOmUprpsk2E7x0d0Y/ECCMLmW4KrZZtuC50OI6Y10QO+DO+68A\nnTVFubF/VLoOcQl0GsHwUIOARpciVcPwnZlhdJivmQKBgQD2cp/KP+p38SDi83wc\n4IuGQlnXir4XZ52Jy79i/CAtAfZDInp5dhFP7ergFRp8qQN04Kp9YFkIETFHruPP\nszc19h9Dy6dgrCCzIry3Aq1IFkO/VvteoS6zdhL9FwAZEQjQpYd4R/nNMOvwUkbh\nkeNbN5LvibytolIR0LWOXsRQvwKBgQD1Pl98oW6+QYyrK9e9pEp1Qg7JJrvEz1Lq\n7DV879XC9Hk2W3DHvgnM4A2IouXKryrrl4C4T7V6CQNRqPcvogF7GSqWP6SIuVXJ\nP+7ofezfPs7KdmmUvt//yFZA+f2Dsu9fcnIuE0TrCYQiUrNi8uBGYcpZeQxBJ05f\nOWpQqgHjOwKBgAqeldQZPPk+IrSk2UxFQL3gTg7Do71OcbNmXDDfvGM0GnB6I9zo\nAYb4MY7GWgXVIpj+tVoBtNRsKTt1hcuFZXOlz2MUe3nm8OHHNWqNavoYO4MbNGm3\neFOzWs4dF5v85+xVtaixMUpuOTx5zyQZLTrZAjPgM4kn3XF3FNu1qa/xAoGBAMml\nFWImYiYxQ3ZiwCr/8PDk9b9TB8TVKzpaKcimcr6vwRJ+sQarLOe1uasFNagny0SW\n95GUiITk8EOuiEA0Fr+ee7O6dJCuwuiMluW21JLi06kJH9rb7tYjZThb1KT69XMn\naNaVpW8UDf8ivLi5NsroETbsHrVbmkcVsGLOxmqNAoGBANGHLqFQFxRPN/19RxCl\n84AhB5DJoqJkAgujL9OPsHvCxnKEl2Y/wFx7eLr1kP98iqy6cECaMGakxwWN/1ei\n0+Xg7I8blkYQfMzhNNY+nCEMU14UY3kJFiMHRtTh4h5zkaLyrjy0iHaX3j1mvxx4\nwHm2WtU6cN1HguL1ydy7cBM1\n-----END PRIVATE KEY-----\n",
+  client_email: "xplore@xplore-268610.iam.gserviceaccount.com",
+  client_id: "114741794980474942553",
+  auth_uri: "https://accounts.google.com/o/oauth2/auth",
+  token_uri: "https://oauth2.googleapis.com/token",
+  auth_provider_x509_cert_url: "https://www.googleapis.com/oauth2/v1/certs",
+  client_x509_cert_url: "https://www.googleapis.com/robot/v1/metadata/x509/xplore%40xplore-268610.iam.gserviceaccount.com"
+  }
+  bucket: xplore-bucket
 
 # Use rails credentials:edit to set the Azure Storage secret (as azure_storage:storage_access_key)
 # microsoft:
