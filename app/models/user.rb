@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  validates :full_name, :username, presence: true
+  validates :username, presence: true
   validates :username, uniqueness: true
 
   has_many :wishes
