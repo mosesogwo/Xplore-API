@@ -67,7 +67,7 @@ RSpec.describe 'Packages', type: :request do
     before {
       Wish.create(user_id: test_user.id, package_id: packages[0].id)
       Wish.create(user_id: test_user.id, package_id: packages[1].id)
-      delete "/api/v1/wishes/#{1}", params: { username: test_user.username }
+      delete "/api/v1/wishes/#{packages[0].id}", params: { username: test_user.username }
     }
 
     it 'returns a success message' do
