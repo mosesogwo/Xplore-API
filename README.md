@@ -41,9 +41,9 @@ To run tests,
 
   - Run - `bundle exec rspec`
 
-## Authors
+## Author
 
-👤 **Author1**
+👤 **Moses Ogwo**
 
 - Github: [@mosesogwo](https://github.com/mosesogwo/)
 - Linkedin: [Moses Ogwo](https://www.linkedin.com/in/moses-ogwo-327168114/)
