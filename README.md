@@ -2,12 +2,14 @@
 
 > A Rails API for Xplore App. Xplore is a listing of vacation packages.
 
+
 ## Built With
 
 - Ruby
 - Rails
 - Postgresql
 - RSpec
+
 
 ## Getting Started
 
@@ -41,6 +43,9 @@ To run tests,
 
   - Run - `bundle exec rspec`
 
+## Upcoming features
+- Authentication with JWT
+
 ## Author
 
 👤 **Moses Ogwo**
@@ -53,7 +58,7 @@ To run tests,
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](issues/).
+Feel free to check the [issues page](https://github.com/mosesogwo/Xplore-API/issues).
 
 
 ## Acknowledgments
